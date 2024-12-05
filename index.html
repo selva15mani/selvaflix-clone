@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selvaflix Intro Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .title {
+      font-size: 8rem;
+      font-weight: bold;
+      color: red;
+      font-family: 'Arial', sans-serif;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      animation: zoom 4s ease-out forwards, fade 2s ease-out forwards;
+      z-index: 2;
+    }
+
+    /* Keyframe Animation for Zoom effect */
+    @keyframes zoom {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Fade-in effect */
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Optional: Background video effect */
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      animation: backgroundZoom 4s ease-out forwards;
+    }
+
+    @keyframes backgroundZoom {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.5);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Background video to simulate Netflix intro style -->
+    <video autoplay muted loop>
+      <source src="your-video-file.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="title">selvaflix</div>
+  </div>
+</body>
+</html>
